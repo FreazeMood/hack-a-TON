@@ -20,15 +20,14 @@ onMounted(() => {
 <template>
   <div>
     <div v-if="tasks">
-      <div v-for="task in tasks">
+      <div v-for="(task, i) in tasks" :key="i">
         <ul v-if="task.taskTitle && !task.inProccess" class="chooseTask">
           <li>
             {{ task.taskTitle }}
           </li>
-          <button class="chooseBtn">
-            <a href="#" />
+          <router-link :to="`/tasks/${task.taskId}`">
             let's get started
-          </button>
+          </router-link>
         </ul>
       </div>
     </div>
