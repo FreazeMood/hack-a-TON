@@ -25,7 +25,7 @@ onMounted(() => {
           <li>
             {{ task.taskTitle }}
           </li>
-          <router-link :to="`/tasks/${task.taskId}`">
+          <router-link :to="`/tasks/${task.id}`">
             let's get started
           </router-link>
         </ul>

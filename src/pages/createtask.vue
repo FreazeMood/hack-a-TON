@@ -2,7 +2,6 @@
 import axios from 'axios'
 const taskTitle = $ref('')
 const taskUserId = $ref('') // userId, он же public_key мы должны получать из props или еще откуда-то, пока просто захардокь
-const taskId = Math.random().toString(36).slice(2) // taskId to define the task while the user starts a task
 const price = $ref(0.01)
 const inProccess = false
 
@@ -13,7 +12,6 @@ const createTask = async () => {
     const taskObj = {
       taskTitle,
       taskUserId,
-      taskId,
       inProccess,
     }
 
