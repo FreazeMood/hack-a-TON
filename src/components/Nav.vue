@@ -31,7 +31,6 @@ const signOut = () => {
   user.address = null
   user.secretKey = null
   user.publicKey = null
-  localStorage.clear()
   router.push('/')
   userMenu = false
 }
