@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 require('dotenv').config()
 
 const TonWeb = require('tonweb')
@@ -91,6 +92,59 @@ app.post('/signin', async (req, res) => {
     else {
       res.json({ error: 'Account doesn\'t exist' })
     }
+  }
+  catch (e) {
+    console.log(e)
+    res.status(400).send(e)
+  }
+})
+
+app.post('/channelprepare', async (req, res) => {
+  // NOT FINISHED NEED YEAT
+  if (!req.body.customerPublicKey || req.body.workerPublicKey)
+    res.status(400).json({ e: 'worng publickeys please try again' })
+
+  try {
+    const customerPublicKey = TonWeb.utils.base64ToBytes(req.body.customerPublicKey)
+    const customerWallet = tonweb.wallet.create(customerPublicKey)
+    const customerWalletAddress = await customerWallet.getAddress()
+    const customerBalanceNano = await tonweb.getBalance(customerWalletAddress)
+
+    const workerPublicKey = TonWeb.utils.base64ToBytes(req.body.workerPublicKey)
+    const workerWallet = tonweb.wallet.create(workerPublicKey)
+    const workerWalletAddress = await workerWallet.getAddress()
+    const workerBalanceNano = await tonweb.getBalance(workerWalletAddress)
+
+    const channelInitState = {
+      customerBalance: customerBalanceNano,
+      workerBalance: workerBalanceNano,
+      seqnoCustomer: new BN(0),
+      seqnoWorker: new BN(0),
+    }
+
+    const channelConfig = {
+      channelId: new BN(uuidv4()), // Channel ID, for each new channel there must be a new ID
+      customerAddress: customerWalletAddress, // A's will be withdrawn to this wallet address after the channel is closed
+      workerAddress: workerWalletAddress, // B's will be withdrawn to this wallet address after the channel is closed
+      initBalanceCustomer: channelInitState.customerBalance,
+      initBalanceWorker: channelInitState.workerBalance,
+    }
+
+    const customerChannel = tonweb.payments.createChannel({
+      ...channelConfig,
+      isA: true,
+      customerKeyPair: customerkeyPair,
+      workerPublicKey: keyPairB.publicKey,
+    })
+    const channelAddress = await customerChannel.getAddress() // address of this payment channel smart-contract in blockchain
+    console.log('channelAddress=', channelAddress.toString(true, true, true))
+
+    const workerChannel = tonweb.payments.createChannel({
+      ...channelConfig,
+      isA: false,
+      workerKeyPair: keyPairB,
+      customerPublicKey: keyPairA.publicKey,
+    })
   }
   catch (e) {
     console.log(e)

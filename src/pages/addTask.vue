@@ -1,8 +1,9 @@
 <script setup>
 import axios from 'axios'
+import { initial } from 'cypress/types/lodash'
 const router = useRouter()
 const taskTitle = $ref('')
-const taskUserId = $ref('')
+const customerPublicKey = $ref('')
 const price = $ref(0.01)
 const inProccess = false
 const question1 = $ref('')
@@ -12,14 +13,22 @@ const question4 = $ref('')
 const question5 = $ref('')
 const question6 = $ref('')
 const question7 = $ref('')
+const user = useUserStore()
 
+onBeforeMount(() => {
+  if (!user || !user.publicKey)
+    router.push('/signin')
+})
 // TODO OTHER TASK DATA
 
 const addTask = async () => {
+  if (!user || !user.publicKey)
+    router.push('/signin')
+
   try {
     const taskObj = {
       title: taskTitle,
-      taskUserId,
+      customerPublicKey: user.publicKey,
       inProccess,
       labels: [
         question1,

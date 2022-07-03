@@ -31,6 +31,7 @@ const signOut = () => {
   user.address = null
   user.secretKey = null
   user.publicKey = null
+  localStorage.clear()
   router.push('/')
   userMenu = false
 }
@@ -68,6 +69,9 @@ const signOut = () => {
             </div>
           </div>
         </div>
+        <button class="icon-btn mx-2 color-gray-300 !outline-none" @click="toggleDark()">
+          <div i="carbon-sun dark:carbon-moon" />
+        </button>
         <balance />
         <div v-if="!user.publicKey" class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <!-- Profile dropdown -->

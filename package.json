@@ -23,6 +23,7 @@
     "pinia": "^2.0.14",
     "prism-theme-vars": "^0.2.3",
     "tonweb": "0.0.50",
+    "uuid": "^8.3.2",
     "vue": "^3.2.37",
     "vue-demi": "^0.13.1",
     "vue-router": "^4.0.16",
