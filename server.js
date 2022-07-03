@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 require('dotenv').config()
 
 const TonWeb = require('tonweb')
@@ -123,7 +122,7 @@ app.post('/channelprepare', async (req, res) => {
     }
 
     const channelConfig = {
-      channelId: new BN(uuidv4()), // Channel ID, for each new channel there must be a new ID
+      channelId: new BN(222), // Channel ID, for each new channel there must be a new ID
       customerAddress: customerWalletAddress, // A's will be withdrawn to this wallet address after the channel is closed
       workerAddress: workerWalletAddress, // B's will be withdrawn to this wallet address after the channel is closed
       initBalanceCustomer: channelInitState.customerBalance,
