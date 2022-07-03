@@ -1,6 +1,5 @@
 <script setup>
 import axios from 'axios'
-import { initial } from 'cypress/types/lodash'
 const router = useRouter()
 const taskTitle = $ref('')
 const customerPublicKey = $ref('')
