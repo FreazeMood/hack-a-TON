@@ -1,9 +1,8 @@
 {
-  "users": [
-  ],
+  "users": [],
   "tasks": [
     {
-      "title": "New image labeling",
+      "title": "Is there a human?",
       "taskUserId": "",
       "inProccess": false,
       "labels": [
@@ -18,7 +17,7 @@
       "id": 1
     },
     {
-      "title": "New image labeling",
+      "title": "cat recognition",
       "taskUserId": "",
       "inProccess": false,
       "labels": [
@@ -31,6 +30,51 @@
         ""
       ],
       "id": 2
+    },
+    {
+      "title": "find the bird",
+      "taskUserId": "",
+      "inProccess": false,
+      "labels": [
+        "is it a bird",
+        "is it black",
+        "is it white  ",
+        "is it a gist",
+        "is it a human",
+        "",
+        ""
+      ],
+      "id": 3
+    },
+    {
+      "title": "face recognition",
+      "taskUserId": "",
+      "inProccess": false,
+      "labels": [
+        "is it a human?",
+        "is it white?",
+        "is it black?",
+        "is it alive?",
+        "is it big?",
+        "",
+        ""
+      ],
+      "id": 4
+    },
+    {
+      "title": "find the animal",
+      "taskUserId": "",
+      "inProccess": false,
+      "labels": [
+        "is it an animal?",
+        "is it a human?",
+        "is it a gist?",
+        "does it alive?",
+        "",
+        "",
+        ""
+      ],
+      "id": 5
     }
   ]
 }
