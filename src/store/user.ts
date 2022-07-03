@@ -8,7 +8,7 @@ export const useUserStore = defineStore('user', () => {
 
   async function signUp() {
     try {
-      const res = await axios.post('http://localhost:8888/signup')
+      const res = await axios.post(`http://${import.meta.env.VITE_HOST}:8888/signup`)
       if (res.data && res.data.publicKey && res.data.secretKey && res.data.address) {
         publicKey.value = res.data.publicKey
         secretKey.value = res.data.secretKey
@@ -24,7 +24,7 @@ export const useUserStore = defineStore('user', () => {
 
   async function signIn(secret: any) {
     try {
-      const res = await axios.post('http://localhost:8888/signin', { secret })
+      const res = await axios.post(`http://${import.meta.env.VITE_HOST}:8888/signin`, { secret })
       if (res.data && res.data.publicKey && res.data.address) {
         publicKey.value = res.data.publicKey
         secretKey.value = secret
