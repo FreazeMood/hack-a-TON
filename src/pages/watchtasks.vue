@@ -25,7 +25,7 @@ onMounted(() => {
           <li>
             {{ task.taskTitle }}
           </li>
-          <router-link :to="`/tasks/${task.id}`">
+          <router-link :to="`/tasks/${task.id}`" class="chooseBtn">
             let's get started
           </router-link>
         </ul>

@@ -24,3 +24,4 @@ useHead({
 <template>
   <RouterView />
 </template>
+
