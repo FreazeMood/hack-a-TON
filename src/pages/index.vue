@@ -1,26 +1,17 @@
 <script setup lang="ts">
-import axios from 'axios'
-let post = $ref(null)
+// const post = $ref(null)
+const user = useUserStore()
 
-const getTask = async () => {
-  try {
-    const p = await axios.get('http://localhost:3000/posts/1')
-    post = p.data
-  }
-  catch (e) {
-    console.log(e)
-  }
-}
-
-onMounted(() => {
-  getTask()
+onMounted(async () => {
+  // await user.signUp()
+  await user.signIn('ZjMLu3B1aKxaHEbSLG/8umh3DehN6VhBUJ7jMXSdsDhb9yDSuLpoU0uaCTR+vHFv4eaA+dBaLBoCwmsH2Hzlbw==')
+  console.log(user.address)
+  console.log(user.secretKey)
 })
 </script>
 
 <template>
-  <div v-if="post">
-    {{ post.title }}
-  </div>
+  <div>H1</div>
 </template>
 
 <route lang="yaml">

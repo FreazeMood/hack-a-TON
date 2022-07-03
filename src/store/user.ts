@@ -1,32 +1,49 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useUserStore = defineStore('user', () => {
-  /**
-   * Current name of the user.
-   */
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+  const publicKey = ref(null)
+  const secretKey = ref(null)
+  const address = ref(null)
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+  async function signUp() {
+    try {
+      const res = await axios.post('http://localhost:8888/signup')
+      if (res.data && res.data.publicKey && res.data.secretKey && res.data.address) {
+        publicKey.value = res.data.publicKey
+        secretKey.value = res.data.secretKey
+        address.value = res.data.address
 
-  /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
-   *
-   * @param name - new name to set
-   */
-  function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
+        return 'success'
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }
 
-    savedName.value = name
+  async function signIn(secret: any) {
+    try {
+      const res = await axios.post('http://localhost:8888/signin', { secret })
+      if (res.data && res.data.publicKey && res.data.address) {
+        publicKey.value = res.data.publicKey
+        secretKey.value = secret
+        address.value = res.data.address
+
+        return 'success'
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 
   return {
-    setNewName,
-    otherNames,
-    savedName,
+    signUp,
+    signIn,
+    publicKey,
+    secretKey,
+    address,
   }
 })
 
