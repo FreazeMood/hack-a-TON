@@ -23,7 +23,7 @@ const finishTask = () => {
 }
 
 onBeforeMount(async () => {
-  const getTask = await axios.get(`http://${import.meta.env.VITE_HOST}:3000/${props.id}`)
+  const getTask = await axios.get(`http://${import.meta.env.VITE_HOST}:3000/tasks/${props.id}`)
   if (getTask.data.inProccess === false)
     task = getTask.data
   else
