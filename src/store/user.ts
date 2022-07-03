@@ -5,6 +5,7 @@ export const useUserStore = defineStore('user', () => {
   const publicKey = ref(null)
   const secretKey = ref(null)
   const address = ref(null)
+  const balance = ref('0')
 
   if (localStorage.address && localStorage.publicKey && localStorage.secretKey) {
     address.value = localStorage.address
@@ -40,6 +41,7 @@ export const useUserStore = defineStore('user', () => {
         publicKey.value = res.data.publicKey
         secretKey.value = secret
         address.value = res.data.address
+        balance.value = res.data.balance
 
         return 'success'
       }
@@ -55,6 +57,7 @@ export const useUserStore = defineStore('user', () => {
     publicKey,
     secretKey,
     address,
+    balance,
   }
 })
 

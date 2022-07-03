@@ -77,12 +77,16 @@ app.post('/signin', async (req, res) => {
 
       const walletAddress = await wallet.getAddress()
 
-      const keyPairObj = {
+      const balanceNano = await tonweb.getBalance(walletAddress)
+
+      const userData = {
         publicKey: TonWeb.utils.bytesToBase64(publicKey),
         address: walletAddress.toString(true, true, true),
+        balance: TonWeb.utils.fromNano(new BN(balanceNano)),
       }
+      console.log(userData)
 
-      res.json(keyPairObj)
+      res.json(userData)
     }
     else {
       res.json({ error: 'Account doesn\'t exist' })
