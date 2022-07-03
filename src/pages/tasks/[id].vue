@@ -1,6 +1,6 @@
 <script setup>
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import axios from 'axios'
 
 const props = defineProps(['id'])
