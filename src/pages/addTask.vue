@@ -33,7 +33,7 @@ const addTask = async () => {
 
     }
 
-    const res = await axios.post('http://localhost:3000/tasks', taskObj)
+    const res = await axios.post(`http://${import.meta.env.HOST}:3000/tasks`, taskObj)
     if (res.data)
       router.push('/')
   }

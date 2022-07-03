@@ -5,7 +5,7 @@ let tasks = $ref(null)
 
 const getTask = async () => {
   try {
-    const get = await axios.get('http://localhost:3000/tasks')
+    const get = await axios.get(`http://${import.meta.env.HOST}:3000/tasks`)
     tasks = get.data
   }
   catch (e) {

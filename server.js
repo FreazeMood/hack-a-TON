@@ -42,7 +42,7 @@ app.post('/signup', async (req, res) => {
     const seed2 = base64seed.slice(15, 30)
     const seed3 = base64seed.slice(30)
 
-    const response = await axios.post('http://localhost:3000/users', {
+    const response = await axios.post(`http://${process.env.HOST}:3000/users`, {
       seed1,
       seed2,
       seed3,
@@ -67,7 +67,7 @@ app.post('/signin', async (req, res) => {
     const seed2 = seed.slice(15, 30)
     const seed3 = seed.slice(30)
 
-    const response = await axios.get(`http://localhost:3000/users?seed1=${seed1}&seed2=${seed2}&seed3=${seed3}`)
+    const response = await axios.get(`http://${process.env.HOST}:3000/users?seed1=${seed1}&seed2=${seed2}&seed3=${seed3}`)
 
     if (response.data) {
       const publicKey = TonWeb.utils.base64ToBytes(req.body.secret).slice(32)
