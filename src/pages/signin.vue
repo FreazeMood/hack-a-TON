@@ -13,8 +13,11 @@ const signIn = async () => {
     const res = await user.signIn(secretKey)
     if (res === 'success')
       router.push('/')
-    if (document.getElementById('remember-me').checked)
-      console.log('rememberd you')
+    if (document.getElementById('remember-me').checked) {
+      localStorage.setItem('secretKey', user.secretKey)
+      localStorage.setItem('publicKey', user.publicKey)
+      localStorage.setItem('address', user.address)
+    }
   }
 }
 
@@ -44,7 +47,7 @@ const remember = async () => {
 
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
-                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" @change="remember">
+                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
                     <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
                   </div>
                 </div>

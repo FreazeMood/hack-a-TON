@@ -6,6 +6,17 @@ export const useUserStore = defineStore('user', () => {
   const secretKey = ref(null)
   const address = ref(null)
 
+  if (localStorage.address && localStorage.publicKey && localStorage.secretKey) {
+    address.value = localStorage.address
+    publicKey.value = localStorage.publicKey
+    secretKey.value = localStorage.secretKey
+    return {
+      publicKey,
+      secretKey,
+      address,
+    }
+  }
+
   async function signUp() {
     try {
       const res = await axios.post(`http://${import.meta.env.VITE_HOST}:8888/signup`)
