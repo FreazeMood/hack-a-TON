@@ -77,9 +77,12 @@ app.post('/signin', async (req, res) => {
 
       const walletAddress = await wallet.getAddress()
 
+      const balanceNano = await tonweb.getBalance(walletAddress)
+
       const keyPairObj = {
         publicKey: TonWeb.utils.bytesToBase64(publicKey),
         address: walletAddress.toString(true, true, true),
+        balance: TonWeb.utils.fromNano(new BN(balanceNano)),
       }
 
       res.json(keyPairObj)
