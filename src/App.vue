@@ -3,7 +3,7 @@
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
-  title: 'DataLabeling',
+  title: 'Datatoning',
   meta: [
     { name: 'description', content: 'Image dataset labeling' },
     {
@@ -14,8 +14,8 @@ useHead({
   link: [
     {
       rel: 'icon',
-      type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+      type: 'image/png',
+      href: computed(() => '/favicon-16x16.2c72beb2.png'),
     },
   ],
 })

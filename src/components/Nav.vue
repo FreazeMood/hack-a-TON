@@ -53,13 +53,16 @@ const signOut = () => {
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="text-white-300 px-3 py-2 rounded-md text-lg font-medium">
-            DataLabeling
+          <div class="text-white-300 px-3 py-2 rounded-md text-xl font-900 font-medium">
+            Datatoning
           </div>
-          <div class="hidden sm:block sm:ml-6">
+          <div class="pt-2.5">
+            💎
+          </div>
+          <div class="hidden sm:flex justify-center items-center sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <router-link to="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">
+              <router-link to="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-2 py-1 rounded-1" aria-current="page">
                 Dashboard
               </router-link>
             </div>
@@ -125,6 +128,5 @@ const signOut = () => {
   </nav>
 </template>
 
-  <style lang="scss" scoped>
-
+  <style lang="css" scoped>
   </style>

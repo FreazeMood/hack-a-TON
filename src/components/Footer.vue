@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <nav text-xl mt-6>
+  <nav class="relative w30 ma" text-xl mt-6>
     <RouterLink class="icon-btn mx-2" to="/" title="Home">
-      <div i-carbon-campsite />
+      <div class="absolute left-0 -top-1px">
+        💎
+      </div>
     </RouterLink>
 
     <button class="icon-btn mx-2 !outline-none" @click="toggleDark()">
