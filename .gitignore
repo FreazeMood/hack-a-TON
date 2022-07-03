@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 .vite-ssg-temp/
 dist/
 node_modules/
+=======
+.DS_Store
+.vite-ssg-dist
+.vite-ssg-temp
+*.local
+dist
+dist-ssr
+node_modules
+.idea/
+*.log
+>>>>>>> Feature/upload-and-get-tasks
