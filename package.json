@@ -24,7 +24,8 @@
     "tonweb": "0.0.50",
     "vue": "^3.2.37",
     "vue-demi": "^0.13.1",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "vue3-carousel": "^0.1.40"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",

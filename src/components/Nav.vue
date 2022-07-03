@@ -59,9 +59,9 @@ const signOut = () => {
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
-
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tasks</a>
+              <router-link to="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">
+                Dashboard
+              </router-link>
             </div>
           </div>
         </div>
@@ -77,10 +77,12 @@ const signOut = () => {
           </div>
         </div>
         <div v-else class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <button class="btn bg-blue lt-md:hidden">
-            + Add new task
-          </button>
-          <div i-carbon-add-filled class="btn bg-blue color-white text-2xl md:hidden" />
+          <router-link to="/addtask">
+            <button class="btn bg-blue lt-md:hidden">
+              + Add new task
+            </button>
+            <div i-carbon-add-filled class="btn bg-blue color-white text-2xl md:hidden" />
+          </router-link>
           <!-- Profile dropdown -->
           <div class="ml-3 relative">
             <div>
@@ -115,9 +117,9 @@ const signOut = () => {
     <div id="mobile-menu" :class="mobMenuClass">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
-
-        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tasks</a>
+        <router-link to="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">
+          Dashboard
+        </router-link>
       </div>
     </div>
   </nav>

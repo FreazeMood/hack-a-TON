@@ -1,18 +1,49 @@
 <script setup lang="ts">
-// const post = $ref(null)
-const user = useUserStore()
+import axios from 'axios'
+const router = useRouter()
+let tasks = $ref(null)
 
-onMounted(async () => {
-  // await user.signUp()
-  await user.signIn('ZjMLu3B1aKxaHEbSLG/8umh3DehN6VhBUJ7jMXSdsDhb9yDSuLpoU0uaCTR+vHFv4eaA+dBaLBoCwmsH2Hzlbw==')
-  console.log(user.address)
-  console.log(user.secretKey)
+const getTask = async () => {
+  try {
+    const get = await axios.get('http://localhost:3000/tasks')
+    tasks = get.data
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
+onMounted(() => {
+  getTask()
 })
 </script>
 
 <template>
-  <div>H1</div>
+  <div>
+    <div v-if="tasks" class="flex justify-center items-center flex-col">
+      <div v-for="(task, i) in tasks" :key="i">
+        <div v-if="task.title && !task.inProccess" class="rounded-1 color-gray-800 shadow-black bg-bluegray-500 dark:shadow-bluegray-300 px-2 flex w-100 flex-col ma-2 cursor-pointer" @click="router.push(`/tasks/${task.id}`)">
+          <div>
+            {{ task.title }}
+          </div>
+          <div class="color-blue-200">
+            let's get started
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style lang="css">
+.chooseTask{
+    padding-top: 5%;
+}
+
+.chooseBtn{
+    color: aqua;
+}
+</style>
 
 <route lang="yaml">
 meta:

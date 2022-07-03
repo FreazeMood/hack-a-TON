@@ -234,109 +234,165 @@
       "seed2": "Ik8EyFJyGy1xNcy",
       "seed3": "gazmjmMmuwXSo=",
       "id": 40
+    },
+    {
+      "seed1": "OTIklmt3wWhQsLX",
+      "seed2": "/YDEhoR6IN4h/1y",
+      "seed3": "LpuLvK6Hb4bu4=",
+      "id": 41
+    },
+    {
+      "seed1": "HN6N4ZbFnV5x58V",
+      "seed2": "OSgsgZN5nOk4042",
+      "seed3": "qTQFJZ4HB9eIE=",
+      "id": 42
+    },
+    {
+      "seed1": "O7Wb9B16tJlrX1C",
+      "seed2": "L21IPYtZAwcR8xM",
+      "seed3": "Oef47LuU+vYb8=",
+      "id": 43
+    },
+    {
+      "seed1": "/BbBm4/TQox3ze6",
+      "seed2": "3FabI3V37kdVULC",
+      "seed3": "u/5iZQ99ggn+4=",
+      "id": 44
+    },
+    {
+      "seed1": "A1xg/WGM0b3TIwG",
+      "seed2": "+EN9o9WUln5hgaT",
+      "seed3": "5A8JBlZIbcvks=",
+      "id": 45
+    },
+    {
+      "seed1": "z2d2Imecx6TOpnc",
+      "seed2": "BUhfgWPZ9bMenEV",
+      "seed3": "7pxWgIS0/2qdc=",
+      "id": 46
+    },
+    {
+      "seed1": "2omNmfhl9XudOqc",
+      "seed2": "qldoNlQxHe7pMui",
+      "seed3": "GXG4zKQ/js2bo=",
+      "id": 47
+    },
+    {
+      "seed1": "RDiD+tad8IRraEp",
+      "seed2": "5fkJYteserMLmF4",
+      "seed3": "lSacORLk8QCYE=",
+      "id": 48
+    },
+    {
+      "seed1": "QNka28XQhypoS8z",
+      "seed2": "jiE/wlbWj8kPi9f",
+      "seed3": "Ck2zfwFCFZmqE=",
+      "id": 49
+    },
+    {
+      "seed1": "PHrcDMQqaBUKpF4",
+      "seed2": "G6y/hfuwLYiISm6",
+      "seed3": "mJHApGqnYtSFA=",
+      "id": 50
     }
   ],
-  "createdtasks": [
+  "tasks": [
     {
       "id": 1,
       "title": "json-server",
       "author": "typicode"
     },
     {
-      "taskTitle": "asdasdasdas",
+      "title": "asdasdasdas",
       "taskUserId": "",
-      "id": 2
+      "id": 2,
+      "inProccess": false
     },
     {
-      "taskTitle": "recognize this picture",
+      "title": "recognize this picture",
       "taskUserId": "",
-      "id": 3
+      "id": 3,
+      "inProccess": false
     },
     {
-      "taskTitle": "uruksa",
+      "title": "uruksa",
       "taskUserId": "",
-      "id": 4
+      "id": 4,
+      "inProccess": false
     },
     {
-      "taskTitle": "2213123qasdasd",
+      "title": "2213123qasdasd",
       "taskUserId": "",
-      "id": 5
+      "id": 5,
+      "inProccess": false
     },
     {
-      "taskTitle": "asdasd12qwewqe",
+      "title": "asdasd12qwewqe",
       "taskUserId": "",
-      "id": 6
+      "id": 6,
+      "inProccess": false
     },
     {
-      "taskTitle": "asdasdqo;lkqwjeo123",
+      "title": "happy year",
       "taskUserId": "",
-      "taskId": "asdasdads",
-      "id": 7
-    },
-    {
-      "taskTitle": "just recognize it",
-      "taskUserId": "",
-      "taskId": "qxhgivc6tu",
-      "id": 8
-    },
-    {
-      "taskTitle": "submiting new taskk.....",
-      "taskUserId": "",
-      "taskId": "usiow8c1g19",
-      "id": 9
-    },
-    {
-      "taskTitle": "asdasdasdasdasd",
-      "taskUserId": "",
-      "taskId": "2gtslp7dlpn",
-      "id": 10
-    },
-    {
-      "taskTitle": "new task",
-      "taskUserId": "",
-      "taskId": "350zco2910y",
-      "id": 11
-    },
-    {
-      "taskTitle": "dear money",
-      "taskUserId": "",
-      "taskId": "p667en9jik",
-      "inProccess": true,
-      "id": 13
-    },
-    {
-      "taskTitle": "dear money",
-      "taskUserId": "",
-      "taskId": "p667en9jik",
       "inProccess": false,
-      "id": 15
-    },
-    {
-      "taskTitle": "",
-      "taskUserId": "",
-      "taskId": "miz1hddun9k",
-      "inProccess": false,
-      "id": 16
-    },
-    {
-      "taskTitle": "",
-      "taskUserId": "",
-      "taskId": "miz1hddun9k",
-      "inProccess": false,
-      "id": 17
-    },
-    {
-      "taskTitle": "",
-      "taskUserId": "",
-      "taskId": "miz1hddun9k",
-      "inProccess": false,
-      "id": 18
-    },
-    {
-      "taskTitle": "happy year",
-      "taskUserId": "",
-      "inProccess": true,
       "id": 19
+    },
+    {
+      "title": "New image labeling",
+      "taskUserId": "",
+      "inProccess": true,
+      "question1": "Is it dog",
+      "question2": "Is it cat",
+      "question3": "Is it house",
+      "question4": "Is it apple",
+      "question5": "",
+      "question6": "",
+      "question7": "",
+      "id": 20
+    },
+    {
+      "title": "New image labeling",
+      "taskUserId": "",
+      "inProccess": false,
+      "question1": "Is it dog",
+      "question2": "Is it cat",
+      "question3": "Is it house",
+      "question4": "Is it apple",
+      "question5": "",
+      "question6": "",
+      "question7": "",
+      "id": 21
+    },
+    {
+      "title": "New image labeling",
+      "taskUserId": "",
+      "inProccess": false,
+      "labels": [
+        "Is it something",
+        "Is it dog",
+        "Is it cat",
+        "Is it camel",
+        "",
+        "",
+        ""
+      ],
+      "id": 22
+    },
+    {
+      "title": "New image labeling",
+      "taskUserId": "",
+      "inProccess": true,
+      "labels": [
+        "Is it something",
+        "Is it dog",
+        "Is it cat",
+        "Is it camel",
+        "",
+        "",
+        ""
+      ],
+      "id": 23
     }
   ],
   "comments": [

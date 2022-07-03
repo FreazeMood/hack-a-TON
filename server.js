@@ -53,8 +53,6 @@ app.post('/signup', async (req, res) => {
 
     else
       res.json({ error: 'Something went wrong' })
-
-    res.json(keyPairObj)
   }
   catch (e) {
     console.log(e)

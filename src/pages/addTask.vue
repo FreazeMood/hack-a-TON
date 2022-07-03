@@ -1,7 +1,8 @@
 <script setup>
 import axios from 'axios'
+const router = useRouter()
 const taskTitle = $ref('')
-const taskUserId = $ref('') // userId, он же public_key мы должны получать из props или еще откуда-то, пока просто захардокь
+const taskUserId = $ref('')
 const price = $ref(0.01)
 const inProccess = false
 const question1 = $ref('')
@@ -14,24 +15,27 @@ const question7 = $ref('')
 
 // TODO OTHER TASK DATA
 
-const createTask = async () => {
+const addTask = async () => {
   try {
     const taskObj = {
-      taskTitle,
+      title: taskTitle,
       taskUserId,
       inProccess,
-      question1,
-      question2,
-      question3,
-      question4,
-      question5,
-      question6,
-      question7,
+      labels: [
+        question1,
+        question2,
+        question3,
+        question4,
+        question5,
+        question6,
+        question7,
+      ],
 
     }
 
-    const res = await axios.post('http://localhost:3000/createdtasks', taskObj)
-    console.log(res)
+    const res = await axios.post('http://localhost:3000/tasks', taskObj)
+    if (res.data)
+      router.push('/')
   }
   catch (e) {
     console.log(e)
@@ -41,16 +45,11 @@ const createTask = async () => {
 
 <template>
   <div class="h-100% flex flex-col flex justify-center items-center">
-    <!-- этот див тут только для примера работы v-model -->
-    <div>
-      {{ taskTitle }}
-    </div>
-    <!--  -->
-    <form class="border-gray border-10 w-100 pa-5 flex flex-col">
-      <input v-model="taskTitle" class="border-2 rounded ma-1 color-black " required type="text">
-      <input v-model="price" class="border-2 rounded ma-1 color-black" required type="text">
-      <input v-model="taskUserId" type="text" hidden="true">
-
+    <form class="border-gray border-10 w-100 pa-5 flex flex-col" @submit.prevent>
+      <label class="text-left" for="title">Title</label>
+      <input v-model="taskTitle" name="title" class="border-2 rounded ma-1 color-black " required type="text">
+      <label class="text-left" for="price">TON's for data labeling</label>
+      <input v-model="price" name="price" class="border-2 rounded ma-1 color-black" required type="text">
       <input v-model="question1" class="border-2 rounded ma-1 color-black" placeholder="your question here" required type="text">
       <input v-model="question2" class="border-2 rounded ma-1 color-black" placeholder="your question here" type="text">
       <input v-model="question3" class="border-2 rounded ma-1 color-black" placeholder="your question here" type="text">
@@ -60,7 +59,7 @@ const createTask = async () => {
       <input v-model="question7" class="border-2 rounded ma-1 color-black" placeholder="your question here" type="text">
 
       <input type="file">
-      <input class="btn rounded bg-gray-700 ma-1" type="submit" value="Submit task" @click="createTask">
+      <input class="btn rounded bg-gray-700 ma-1" type="submit" value="Submit task" @click="addTask">
     </form>
   </div>
 </template>
