@@ -15,6 +15,7 @@ export const useUserStore = defineStore('user', () => {
       publicKey,
       secretKey,
       address,
+      balance,
     }
   }
 
